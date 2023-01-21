@@ -25,8 +25,23 @@ fn main() {
             && !item.contains("SPECIMEN")
             && !item.contains("cover")
             && !item.contains("Souvenir")
+            && !item.contains("CINDERELLAS")
+            && !item.contains("BANK NOTE")
+            && !item.contains("POSTCARDS")
+            && !item.contains("P.O.W. Mail")
+            && !item.contains("COVERS")
+            && !item.contains("JERSEY")
+            && !item.contains("Accum")
+            && !item.contains("Omnibus complete")
+            && !item.contains("BERLIN")
+            && !item.contains("LAW STAMPS")
+            && !item.contains("BRITISH COLUMBIA")
+            && !item.contains("ONTARIO")
+            && !item.contains("SAUDI ARABIA")
+
         {
             let item = item.replace("\n", "");
+            let item = item.replace(",", "");
             for cap in re.captures_iter(&item) {
                 let interesting = &cap[1];
 
