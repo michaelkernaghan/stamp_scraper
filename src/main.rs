@@ -1,7 +1,8 @@
 use regex::Regex;
 
 fn main() {
-    let response = reqwest::blocking::get("http://www.fvhstamps.com/WeeklyAuctions/FvhWA.htm")
+    let response = reqwest::blocking
+        ::get("http://www.fvhstamps.com/WeeklyAuctions/FvhWA.htm")
         .unwrap()
         .text()
         .unwrap();
@@ -14,40 +15,56 @@ fn main() {
     let re = Regex::new(r">(.*?)<").unwrap();
 
     titles.for_each(|item| {
-        if item.contains("jpg")
-            && !item.contains("CATALOGUE")
-            && !item.contains("Catalogue")
-            && !item.contains("BLOCK")
-            && !item.contains("Block")
-            && !item.contains("CANADA")
-            && !item.contains("Booklets")
-            && !item.contains("BOOKLETS")
-            && !item.contains("SPECIMEN")
-            && !item.contains("cover")
-            && !item.contains("Souvenir")
-            && !item.contains("CINDERELLAS")
-            && !item.contains("BANK NOTE")
-            && !item.contains("POSTCARDS")
-            && !item.contains("P.O.W. Mail")
-            && !item.contains("COVERS")
-            && !item.contains("JERSEY")
-            && !item.contains("Accum")
-            && !item.contains("Omnibus complete")
-            && !item.contains("BERLIN")
-            && !item.contains("LAW STAMPS")
-            && !item.contains("BRITISH COLUMBIA")
-            && !item.contains("ONTARIO")
-            && !item.contains("SAUDI ARABIA")
-
+        if
+            item.contains("jpg") &&
+            !item.contains("CATALOGUE") &&
+            !item.contains("Catalogue") &&
+            !item.contains("BLOCK") &&
+            !item.contains("Block") &&
+            !item.contains("CANADA") &&
+            !item.contains("Booklets") &&
+            !item.contains("BOOKLETS") &&
+            !item.contains("SPECIMEN") &&
+            !item.contains("cover") &&
+            !item.contains("Souvenir") &&
+            !item.contains("CINDERELLAS") &&
+            !item.contains("BANK NOTE") &&
+            !item.contains("POSTCARDS") &&
+            !item.contains("P.O.W. Mail") &&
+            !item.contains("COVERS") &&
+            !item.contains("JERSEY") &&
+            !item.contains("Accum") &&
+            !item.contains("Omnibus complete") &&
+            !item.contains("BERLIN") &&
+            !item.contains("LAW STAMPS") &&
+            !item.contains("BRITISH COLUMBIA") &&
+            !item.contains("ONTARIO") &&
+            !item.contains("SAUDI ARABIA") &&
+            !item.contains("ALBERTA") &&
+            !item.contains("SASKATCHEWAN") &&
+            !item.contains("ESSAYS") &&
+            !item.contains("BANKNOTE0") &&
+            !item.contains(" Range of") &&
+            !item.contains("POST  CARDS") &&
+            !item.contains("Cover") &&
+            !item.contains("Forgery") &&
+            !item.contains("Fake") &&
+            !item.contains("Law Stamp") &&
+            !item.contains("SAUDI ARABIA") &&
+            !item.contains("EAST GERMANY") &&
+            !item.contains("GDR")
         {
             let item = item.replace("\n", "");
             let item = item.replace(",", "");
             for cap in re.captures_iter(&item) {
                 let interesting = &cap[1];
 
-                if Regex::new(r"\s18\d{2}.|\s190\d.|\s191\d.|\s192\d.|\s193\d.|\s194\d.")
-                    .unwrap()
-                    .is_match(interesting)
+                if
+                    Regex::new(
+                        r"\s19[0-3]\d-[0-3]\d.|19\d{2}-40.|\s18\d{2}.|\s19[0-3]\d.|1940"
+                    )
+                        .unwrap()
+                        .is_match(interesting)
                 {
                     println!("{}", interesting);
                 }
