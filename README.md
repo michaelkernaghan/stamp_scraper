@@ -20,3 +20,6 @@ To run:
 ```js
 cargo +nightly run
 ```
+
+You can change the rejection parameters and the regex if you like. 
+This version tries to reject anything newer than 1940.
