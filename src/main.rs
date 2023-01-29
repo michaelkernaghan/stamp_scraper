@@ -44,7 +44,6 @@ fn main() {
             !item.contains("SASKATCHEWAN") &&
             !item.contains("ESSAYS") &&
             !item.contains("BANKNOTE") &&
-            !item.contains(" Range of") &&
             !item.contains("POST  CARDS") &&
             !item.contains("Cover") &&
             !item.contains("Forgery") &&
@@ -52,7 +51,10 @@ fn main() {
             !item.contains("Law Stamp") &&
             !item.contains("SAUDI ARABIA") &&
             !item.contains("EAST GERMANY") &&
-            !item.contains("GDR")
+            !item.contains("GDR") 
+            &&
+            !item.contains("study group")
+            
         {
             let item = item.replace("\n", "");
             let item = item.replace(",", "");
