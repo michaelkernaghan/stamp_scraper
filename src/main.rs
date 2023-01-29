@@ -43,7 +43,7 @@ fn main() {
             !item.contains("ALBERTA") &&
             !item.contains("SASKATCHEWAN") &&
             !item.contains("ESSAYS") &&
-            !item.contains("BANKNOTE0") &&
+            !item.contains("BANKNOTE") &&
             !item.contains(" Range of") &&
             !item.contains("POST  CARDS") &&
             !item.contains("Cover") &&
@@ -61,7 +61,7 @@ fn main() {
 
                 if
                     Regex::new(
-                        r"\s19[0-3]\d-[0-3]\d.|19\d{2}-40.|\s18\d{2}.|\s19[0-3]\d.|1940"
+                        r"\s18\d{2}.|\s19[0-3]\d\s.|\s19[0-3]\d-[0-3]\d.|19\d{2}-40.|1940\s."
                     )
                         .unwrap()
                         .is_match(interesting)
