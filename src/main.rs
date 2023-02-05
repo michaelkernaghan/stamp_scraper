@@ -47,12 +47,17 @@ fn main() {
             !item.contains("POST  CARDS") &&
             !item.contains("Cover") &&
             !item.contains("Forgery") &&
+            !item.contains("forgery") &&
             !item.contains("Fake") &&
             !item.contains("Law Stamp") &&
             !item.contains("SAUDI ARABIA") &&
             !item.contains("EAST GERMANY") &&
-            !item.contains("GDR") 
-            &&
+            !item.contains("GDR") &&
+            !item.contains("GREAT BRITAIN") &&
+            !item.contains("OMNIBUS") &&
+            !item.contains("Range of") &&
+            !item.contains("Postcard") &&
+            !item.contains("postcard") &&
             !item.contains("study group")
             
         {
