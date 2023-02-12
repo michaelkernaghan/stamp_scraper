@@ -44,15 +44,24 @@ fn main() {
             !item.contains("SASKATCHEWAN") &&
             !item.contains("ESSAYS") &&
             !item.contains("BANKNOTE") &&
-            !item.contains(" Range of") &&
+            !item.contains("Range of") &&
             !item.contains("POST  CARDS") &&
+            !item.contains("Postcard") &&
+            !item.contains("postcard") &&
             !item.contains("Cover") &&
             !item.contains("Forgery") &&
+            !item.contains("forgery") &&
             !item.contains("Fake") &&
             !item.contains("Law Stamp") &&
             !item.contains("SAUDI ARABIA") &&
             !item.contains("EAST GERMANY") &&
-            !item.contains("GDR")
+            item.contains("GREAT BRITAIN") &&
+            !item.contains("GDR") &&
+            !item.contains("Sel'n") &&
+            !item.contains("sel'n") &&
+            !item.contains("ACCESSORIES") &&
+            tem.contains("booklet") &&
+            !item.contains("OMNIBUS")
         {
             let item = item.replace("\n", "");
             let item = item.replace(",", "");
