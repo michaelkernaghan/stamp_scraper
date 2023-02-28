@@ -44,10 +44,6 @@ fn main() {
             !item.contains("SASKATCHEWAN") &&
             !item.contains("ESSAYS") &&
             !item.contains("BANKNOTE") &&
-<<<<<<< HEAD
-            !item.contains("Range of") &&
-=======
->>>>>>> tighten-constraints-on-dates
             !item.contains("POST  CARDS") &&
             !item.contains("Postcard") &&
             !item.contains("postcard") &&
@@ -58,24 +54,20 @@ fn main() {
             !item.contains("Law Stamp") &&
             !item.contains("SAUDI ARABIA") &&
             !item.contains("EAST GERMANY") &&
-<<<<<<< HEAD
-            item.contains("GREAT BRITAIN") &&
+            !item.contains("GREAT BRITAIN") &&
             !item.contains("GDR") &&
             !item.contains("Sel'n") &&
             !item.contains("sel'n") &&
             !item.contains("ACCESSORIES") &&
-            tem.contains("booklet") &&
-            !item.contains("OMNIBUS")
-=======
-            !item.contains("GDR") &&
-            !item.contains("GREAT BRITAIN") &&
+            !item.contains("booklet") &&
             !item.contains("OMNIBUS") &&
+            !item.contains("GDR") &&
             !item.contains("Range of") &&
             !item.contains("Postcard") &&
             !item.contains("postcard") &&
-            !item.contains("study group")
+            !item.contains("study group") &&
+            !item.contains("ON PAPER")            
             
->>>>>>> tighten-constraints-on-dates
         {
             let item = item.replace("\n", "");
             let item = item.replace(",", "");
